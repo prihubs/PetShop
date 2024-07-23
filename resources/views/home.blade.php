@@ -1,4 +1,10 @@
 <x-layout>
+    
+    @include('components.extracts')
+
+    <x-slot:title>
+        {{$title}}
+    </x-slot:title>
 
         <!-- Hero Start -->
         <div class="container-fluid bg-dark overl-ddark py-5 mb-5 hero-header">
@@ -21,5 +27,15 @@
         </div>
     </div>
     <!-- Hero End -->
+    
+    @include('components.videoModal')
+    @include('components.about')
+    @include('components.services')
+    @include('components.products')
+    @include('components.offers')
+    @include('components.pricing')
+    @include('components.team')
+    @include('components.testimonials')
+    @include('components.blog')
 
 </x-layout>

@@ -393,6 +393,12 @@
     background-size: cover;
 }
 
+.bg-testimonial2 {
+    background: url(../img/blog-1.jpg) top left no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
 .testimonial-carousel .owl-nav {
     position: absolute;
     width: 100%;
@@ -463,4 +469,52 @@
 .overl-ddark{
     background-color: var(--ddark);
     overlay: var(--ddark);
+}
+
+
+.seeProfile{
+    display: flex;
+    font-size: .8rem;
+}
+*{
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.ultrick1{
+    border: .2rem solid var(--dark);
+}
+.ultrick2{
+    padding: 1rem;
+}
+
+.trick2{
+    min-width: fit-content;
+}
+
+
+.ultrick{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.head2{
+    background-color: var(--dark);
+    color: var(--light);
+    padding: 2rem 4rem;
+}
+
+.head2 th{
+    min-width: min-content;
+    padding: 1rem;
+}
+
+.head2 .head22{
+    width: 10rem;
+}
+
+.site-logo{
+    width: 8rem;
+    height: auto; 
 }
