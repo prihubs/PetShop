@@ -1,11 +1,8 @@
 
 @php 
 
-use App\Models\User;
-
 $ext = ''; 
 
-$user = User::find($id);
 @endphp
 
 
