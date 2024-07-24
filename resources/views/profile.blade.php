@@ -13,7 +13,11 @@
 <div class="container pt-5">
     <div class="container">
         <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
-            <h6 class="text-primary text-uppercase"> <span> {{$data->sn}} </span> Profile</h6>
+            <h6 class="text-primary text-uppercase"> <span> {{$data->sn}} </span> Profile | 
+                @auth 
+                Signed in 
+                @endauth
+            </h6>
             <h1 class="display-5 text-uppercase mb-0">Review Your Public Data(s)</h1>
         </div>
         <div class="row g-5">

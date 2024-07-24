@@ -22,6 +22,7 @@ class ShopDataFactory extends Factory
             'user_id' => User::factory(),
             'site_email'=>fake()->companyEmail(),
             'site_phone'=>fake()->phoneNumber(),
+            'site_phone2'=>fake()->e164PhoneNumber(),
             'site_address'=>fake()->address(),
             'site_description'=> 'Your site Description goes here!!'
         ];

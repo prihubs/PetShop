@@ -518,3 +518,10 @@
     width: 8rem;
     height: auto; 
 }
+.colorm{
+    color: var(--light)
+}
+
+.hiddenlink{
+    display: none;
+}

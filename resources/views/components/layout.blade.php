@@ -1,5 +1,12 @@
 
-@php $ext = ''; @endphp
+@php 
+
+use App\Models\User;
+
+$ext = ''; 
+
+$user = User::find($id);
+@endphp
 
 
 <!DOCTYPE html>
@@ -82,18 +89,25 @@
                 <a href="/" class="nav-item nav-link active">Home</a>
                 <a href="/about{{$ext}}" class="nav-item nav-link">About</a>
                 <a href="/services{{$ext}}" class="nav-item nav-link">Service</a>
-                <a href="/product{{$ext}}" class="nav-item nav-link">Product</a>
-                <div class="nav-item dropdown">
+                <a href="/product" class="nav-item nav-link">Product</a>
+                @guest
+                    <a href="/login" class="nav-item nav-link">Login</a>
+                @endguest
+                @auth
+                    <a href="/profile" class="nav-item nav-link">My Profile</a>
+                @endauth
+
+                <div class="nav-item dropdown hiddenlink">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
-                        <a href="/price{{$ext}}" class="dropdown-item">Pricing Plan</a>
-                        <a href="/team{{$ext}}" class="dropdown-item">The Team</a>
-                        <a href="/testimonial{{$ext}}" class="dropdown-item">Testimonial</a>
-                        <a href="/blog{{$ext}}" class="dropdown-item">Blog Grid</a>
-                        <a href="/detail{{$ext}}" class="dropdown-item">Blog Detail</a>
+                        <a href="/price" class="dropdown-item">Pricing Plan</a>
+                        <a href="/team" class="dropdown-item">The Team</a>
+                        <a href="/testimonial" class="dropdown-item">Testimonial</a>
+                        <a href="/blog" class="dropdown-item">Blog Grid</a>
+                        <a href="/detail" class="dropdown-item">Blog Detail</a>
                     </div>
                 </div>
-                <a href="/contact{{$ext}}" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i class="bi bi-arrow-right"></i></a>
+                <a href="/contact" class="nav-item nav-link nav-contact bg-primary text-white px-5 ms-lg-5">Contact <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
     </nav>
@@ -122,22 +136,31 @@
                         @php $ft_class2 = "bi bi-arrow-right text-primary me-2"; $ft_class3 = "text-body mb-2"  @endphp
 
                         <a class="{{$ft_class3}}" href="/"><i class="{{$ft_class2}}"></i>Home</a>
-                        <a class="{{$ft_class3}}" href="about{{$ext}}"><i class="{{$ft_class2}}"></i>About Us</a>
-                        <a class="{{$ft_class3}}" href="services{{$ext}}"><i class="{{$ft_class2}}"></i>Our Services</a>
-                        <a class="{{$ft_class3}}" href="team{{$ext}}"><i class="{{$ft_class2}}"></i>Meet The Team</a>
-                        <a class="{{$ft_class3}}" href="blog{{$ext}}"><i class="{{$ft_class2}}"></i>Latest Blog</a>
+                        <a class="{{$ft_class3}}" href="about"><i class="{{$ft_class2}}"></i>About Us</a>
+                        <a class="{{$ft_class3}}" href="services"><i class="{{$ft_class2}}"></i>Our Services</a>
+                        <a class="{{$ft_class3}}" href="team"><i class="{{$ft_class2}}"></i>Meet The Team</a>
+                        <a class="{{$ft_class3}}" href="blog"><i class="{{$ft_class2}}"></i>Latest Blog</a>
                         <a class="text-body" href="#"><i class="{{$ft_class2}}"></i>Contact Us</a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Popular Links</h5>
+                    <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Important Links</h5>
                     <div class="d-flex flex-column justify-content-start">
-                        <a class="{{$ft_class3}}" href="/"><i class="{{$ft_class2}}"></i>Home</a>
-                        <a class="{{$ft_class3}}" href="about{{$ext}}"><i class="{{$ft_class2}}"></i>About Us</a>
-                        <a class="{{$ft_class3}}" href="services{{$ext}}"><i class="{{$ft_class2}}"></i>Our Services</a>
-                        <a class="{{$ft_class3}}" href="team{{$ext}}"><i class="{{$ft_class2}}"></i>Meet The Team</a>
-                        <a class="{{$ft_class3}}" href="blog{{$ext}}"><i class="{{$ft_class2}}"></i>Latest Blog</a>
-                        <a class="text-body" href="#"><i class="{{$ft_class2}}"></i>Contact Us</a>
+                        @guest
+                        <a class="text-body" href="login"><i class="{{$ft_class2}}"></i>Login</a>
+                        @endguest
+
+                        @auth
+                        <a class="text-body" href="logout"><i class="{{$ft_class2}}"></i>Log Out</a>
+                        @endauth
+
+                        @auth
+                        <a class="text-body" href="profile"><i class="{{$ft_class2}}"></i>My Profile</a>
+                        @endauth
+
+                        @guest 
+                            <a class="text-body" href="signup"><i class="{{$ft_class2}}"></i>Create Account</a> 
+                        @endguest
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">

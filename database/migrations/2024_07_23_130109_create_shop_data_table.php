@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('sn');
             $table->string('site_email');
             $table->string('site_phone');
+            $table->string('site_phone2');
             $table->string('site_address');
             $table->string('site_description');
             $table->string('site_logo')->default('img/default_logo.jpg');
