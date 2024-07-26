@@ -18,7 +18,7 @@ class ShopDataFactory extends Factory
     public function definition(): array
     {
         return [
-            'sn'=>fake()->company(),
+            'sn'=>'PetShop',
             'user_id' => User::factory(),
             'site_email'=>fake()->companyEmail(),
             'site_phone'=>fake()->phoneNumber(),
