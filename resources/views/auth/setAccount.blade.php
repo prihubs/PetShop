@@ -22,10 +22,10 @@
                         <div class="row g-3">
 
                             <div class="col-6">
-                                <input type="text" name="name" class="form-control bg-light border-0 px-4" placeholder="Enter your username" style="height: 55px;">
+                                <input type="text" value="{{old('name')}}" name="name" class="form-control bg-light border-0 px-4" placeholder="Enter your username" style="height: 55px;">
                             </div>
                             <div class="col-6">
-                                <input type="email" name="email" class="form-control bg-light border-0 px-4" placeholder="Enter your email" style="height: 55px;">
+                                <input type="email" value="{{old('email')}}" name="email" class="form-control bg-light border-0 px-4" placeholder="Enter your email" style="height: 55px;">
                             </div>
 
                             <div class="col-6">
@@ -36,14 +36,14 @@
                             </div>
 
                             <div class="col-12">
-                                <input type="text" name="accesskey" class="form-control bg-light border-0 px-4" placeholder="Access Key" style="height: 55px;">
+                                <input type="text" value="{{old('accesskey')}}" name="accesskey" class="form-control bg-light border-0 px-4" placeholder="Access Key" style="height: 55px;">
                             </div>
 
                             <div class="col-6">
                                 <button class="btn btn-primary w-100 py-3" type="submit">Signup</button>
                             </div>
 
-                            
+
                             @if ($errors->any())
                                 @foreach ($errors->all() as $error)
                                 <div class="form-control bg-danger border-0 px-4 col-6 colorm">
@@ -59,5 +59,5 @@
         </div>
     </div>
     <!-- Register End -->
-            
+
 </x-layout>

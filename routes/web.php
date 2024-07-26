@@ -16,7 +16,9 @@ Route::get('team', [ShopController::class, 'team']);
 Route::get('blog', [ShopController::class, 'blog']);
 Route::get('blog-details', [ShopController::class, 'blog_details']);
 Route::get('profile', [ShopController::class, 'profile']);
-Route::get('eprofile', [ShopController::class, 'eprofile']);
+
+Route::get('eprofile', [ShopController::class, 'create'])->middleware('auth');
+Route::put('profile', [ShopController::class, 'store'])->middleware('auth');
 
 Route::get('mykey', [AccessController::class, 'accControl']);
 Route::get('desKey/{id}', [AccessController::class, 'destroyKey'])->middleware('auth');
@@ -27,5 +29,5 @@ Route::post('profile', [SessionController::class, 'store']);
 Route::get('logout', [SessionController::class, 'destroy']);
 
 Route::get('login', [uLogController::class, 'create'])->name('login');
-Route::post('login', [uLogController::class, 'store']);
+Route::post('login', [uLogController::class, 'store'])->middleware('auth');
 

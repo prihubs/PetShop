@@ -11,6 +11,8 @@ class ShopData extends Model
 {
     use HasFactory;
 
+    protected $guarded = null;
+
     public function User(){
         return $this->belongsTo(User::class);
     }

@@ -19,8 +19,10 @@
         </div>
         <div class="row g-5">
             <div class="col-lg">
-                <form method="post" action="" enctype="multipart/form-data">
+                <form method="post" action="/profile" enctype="multipart/form-data">
                     @csrf
+                    @method('put')
+
                     <div class="row g-3">
                         <div class="col-6">
                             <input type="text" name="sn" class="form-control bg-light border-0 px-4" value="{{$data->sn}}" style="height: 55px;" value="">
@@ -43,6 +45,7 @@
                         <div class="col-12">
                             <div class="form-control bg-light border-0 px-5 py-5">
                                 <input type="file" name="site_logo" alt="Upload Logo">
+                                <input type="hidden" name="id" value="{{$data->id}}">
                                 <x-image class="site-logo">{{$data->site_logo}}</x-image>
                             </div>
                         </div>
@@ -60,5 +63,10 @@
 </div>
 @endforeach
 <!-- Form End -->
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        {{$error}}
+    @endforeach
+@endif
 
 </x-layout>
